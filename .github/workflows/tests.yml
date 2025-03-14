@@ -31,7 +31,7 @@ jobs:
       run: pwsh playwright-nunit/bin/Release/net9.0/playwright.ps1 install
 
     - name: Run tests
-      run: dotnet test --configuration Release --no-build --logger "html;LogFileName=TestResults.html"
+      run: dotnet test --configuration Release --no-build --logger "html;LogFileName=index.html"
 
     - name: Publish test results
       if: always()
