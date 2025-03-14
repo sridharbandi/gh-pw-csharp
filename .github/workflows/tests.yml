@@ -19,7 +19,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '9.0'
 
     - name: Restore dependencies
       run: dotnet restore
@@ -28,7 +28,7 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Install Playwright browsers
-      run: pwsh bin/Debug/netX/playwright.ps1 install
+      run: pwsh playwright-nunit/bin/Debug/net9.0/playwright.ps1 install
 
     - name: Run tests
       run: dotnet test --configuration Release --no-build --logger "html;LogFileName=TestResults.html"
